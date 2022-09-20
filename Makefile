@@ -1,11 +1,11 @@
-SOURCES = $(wildcard **/*.c)
-REPORTS = $(subst src/,reports/,${SOURCES:.c=.txt})
+SOURCES = $(wildcard **/*.cpp)
+REPORTS = $(subst src/,reports/,${SOURCES:.cpp=.txt})
 
 .PHONY: reports
 
 tidy: ${REPORTS}
 
-reports/%.txt: src/%.c | reports
+reports/%.txt: src/%.cpp | reports
 	clang-tidy $< | tee $@
 
 reports:
