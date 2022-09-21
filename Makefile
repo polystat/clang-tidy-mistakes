@@ -1,12 +1,24 @@
-SOURCES = $(wildcard **/*.cpp)
-REPORTS = $(subst src/,reports/,${SOURCES:.cpp=.txt})
+FN = $(wildcard false-negative/**.cpp)
+FNR = $(subst false-negative/,fnr/,${FN:.cpp=.txt})
+FP = $(wildcard false-positive/**.cpp)
+FPR = $(subst false-positive/,fpr/,${FP:.cpp=.txt})
 
-.PHONY: reports
+.PHONY: fpr fnr clean
 
-tidy: ${REPORTS}
+tidy: ${FPR} ${FNR}
 
-reports/%.txt: src/%.cpp | reports
+fpr/%.txt: false-positive/%.cpp | fpr
 	clang-tidy $< | tee $@
 
-reports:
-	mkdir -p reports
+fnr/%.txt: false-negative/%.cpp | fnr
+	clang-tidy $< | tee $@
+
+fpr:
+	mkdir -p fpr
+
+fnr:
+	mkdir -p fnr
+
+clean:
+	rm -rf fpr
+	rm -rf fnr
