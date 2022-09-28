@@ -18,9 +18,7 @@ public:
 };
 
 int main() {
-    X arr[] = {X{0}, X(5), X{10}};
-    for (X& x : arr) {
-        std::cout << x.test(5) << std::endl;
-    }
+    X x{5};
+    std::cout << x.test(5) << std::endl;
     return 0;
 }
