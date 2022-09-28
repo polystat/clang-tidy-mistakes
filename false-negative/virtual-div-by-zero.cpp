@@ -13,6 +13,9 @@ public:
     explicit X(int v) : value(v) {}
 
     int test(int a) override {
+        // Division by zero is in the line below.
+        // If we rewrite the expression as "10 / a" and pass 0 to the method,
+        // Clang-Tidy will report the error.
         return 10 / (value - a);
     }
 };
