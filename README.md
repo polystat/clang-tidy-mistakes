@@ -5,6 +5,9 @@ either doesn't find problems which exist
 or finds errors, which are not errors
 ([false positive](https://en.wikipedia.org/wiki/False_positives_and_false_negatives)).
 
+For reference: the list of Clang-Tidy checks can be found [here](
+https://clang.llvm.org/extra/clang-tidy/checks/list.html).
+
 To run all together, just do this:
 
 ```
