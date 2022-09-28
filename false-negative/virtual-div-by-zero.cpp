@@ -3,6 +3,7 @@
 #include <iostream>
 
 struct Intf {
+    // Note: virtual method is required. Otherwise, Clang-Tidy finds the error.
     virtual int test(int a) = 0;
 };
 
