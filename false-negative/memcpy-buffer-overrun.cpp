@@ -12,10 +12,7 @@ void write(void * dest, const void * src, const size_t size) {
 int main() {
     int x = 1;
     int dest_arr[] = {1, 2, 3, 4};
-    while (true) {
-        if (x == 0) {
-            return 0;
-        }
+    while (x) {
         x = 0;
         // This "write" corrupts the x variable causing endless loop.
         write(dest_arr + 3, src_arr, sizeof(src_arr));
