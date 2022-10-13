@@ -1,11 +1,9 @@
 // Clang-Tidy fails to detect an exception in a "nothrow" method
 // if the exception is thrown in a separate function.
 
-#include <iostream>
-
 // This method throws an exception.
 void kill() {
-    throw std::runtime_error("Fail!");
+    throw 10;
 }
 
 // This function is "noexcept", but it calls a function
@@ -20,7 +18,6 @@ int main() {
         test();
     } catch (...) {
         // This line is never executed is exception is thrown in "noexcept"!
-        std::cout << "Exception is handled!";
     }
     return 0;
 }
