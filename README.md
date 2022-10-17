@@ -8,10 +8,12 @@ or finds errors, which are not errors
 The list of Clang-Tidy checks can be found [here](
 https://clang.llvm.org/extra/clang-tidy/checks/list.html).
 
-The source of known issues in C/C++ programs is
-[Common Weakness Enumeration (CWE)](https://cwe.mitre.org/index.html)
-and
-[Juliet Test Suite for C/C++](https://samate.nist.gov/SARD/test-suites/112).
+The sources of known issues in C/C++ programs are:
+
+* [Common Weakness Enumeration (CWE)](https://cwe.mitre.org/index.html)
+* [Juliet Test Suite for C/C++](https://samate.nist.gov/SARD/test-suites/112)
+* [SEI CERT C++ Coding Standard](https://wiki.sei.cmu.edu/confluence/display/seccode/SEI+CERT+Coding+Standards)
+* [MISRA C](https://www.misra.org.uk)
 
 To run all together, just do this:
 
