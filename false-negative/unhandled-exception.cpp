@@ -3,6 +3,11 @@
 
 #include <stdexcept>
 
+void test() {
+    throw 1;
+}
+
 int main() {
+    test();
     throw std::logic_error("Unhandled exception (no catch block)!");
 }
